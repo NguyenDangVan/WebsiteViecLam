@@ -1,0 +1,7 @@
+D:\Tai Lieu\Do an 2\TimVieclam\website\BLL\bin\Debug\BLL.dll
+D:\Tai Lieu\Do an 2\TimVieclam\website\BLL\bin\Debug\BLL.pdb
+D:\Tai Lieu\Do an 2\TimVieclam\website\BLL\bin\Debug\DAL.dll
+D:\Tai Lieu\Do an 2\TimVieclam\website\BLL\bin\Debug\DAL.pdb
+D:\Tai Lieu\Do an 2\TimVieclam\website\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\Tai Lieu\Do an 2\TimVieclam\website\BLL\obj\Debug\BLL.dll
+D:\Tai Lieu\Do an 2\TimVieclam\website\BLL\obj\Debug\BLL.pdb
