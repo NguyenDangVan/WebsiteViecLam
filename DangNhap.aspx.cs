@@ -11,4 +11,12 @@ public partial class DangNhap : System.Web.UI.Page
     {
 
     }
+    protected void btnDNTimViec_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("NguoiTimViec/DangNhapNguoiTimViec.aspx");
+    }
+    protected void btnDNTuyenDung_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("NhaTuyenDung/DangNhapNhaTuyenDung.aspx");
+    }
 }
