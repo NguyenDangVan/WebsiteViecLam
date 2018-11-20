@@ -11,22 +11,11 @@ using System.Data;
 public class UngVienBLL
 {
     Data data = new Data();
-    //string hoten, string matkhau, string diachi, int thanhpho, DateTime ngaysinh, string gioitinh, string email, string sdt
     public void LuuUngVien(UngVien uv)
     {
         string sql = "INSERT INTO UngVien(HoTen, MatKhau, DiaChi, NgaySinh, GioiTinh, Email, SDT, ID_ThanhPho) " 
             + "VALUES (N'" + uv.HoTen + "', '"+ uv.MatKhau +"', N'"+ uv.DiaChi +"', '"+ uv.NgaySinh +"', N'"+ uv.GioiTinh +"', '"+ uv.Email +"', '"+ uv.SDT +"', '"+ uv.ID_ThanhPho +"')";
         data.NowR(sql);
-        
-        //UngVien uv = new UngVien();
-        //uv.HoTen = hoten;
-        //uv.MatKhau = matkhau;
-        //uv.DiaChi = diachi;
-        //uv.ID_ThanhPho = thanhpho;
-        //uv.NgaySinh = ngaysinh;
-        //uv.GioiTinh = gioitinh;
-        //uv.Email = email;
-        //uv.SDT = sdt;
     }
     public bool TimUngVien(string email, string matkhau)
     {

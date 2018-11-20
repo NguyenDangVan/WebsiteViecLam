@@ -21,12 +21,9 @@ public partial class NguoiTimViec_DangNhapNguoiTimViec : System.Web.UI.Page
     {
         string matkhau = encrypt.GetMD5(txtMKNguoiTimViec.Text);
         bool kq1 = ungvienbll.TimUngVien(txtMKNguoiTimViec.Text.Trim().ToString(), matkhau);
-        //var kq = (from n in data.UngViens
-        //          where (n.Email == txtEmail_NguoiTimViec.Text.Trim() && n.MatKhau == matkhau)
-        //          select n).FirstOrDefault();
         if (kq1 != false)
         {
-            Session.SetCurrent_NguoiTimViec(kq, kq);
+            //Session.SetCurrent_NguoiTimViec(kq, kq);
             string returnUrl = Request.QueryString["returnUrl"];
             if (!string.IsNullOrEmpty(returnUrl))
                 Response.Redirect(returnUrl);

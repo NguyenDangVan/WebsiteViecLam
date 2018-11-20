@@ -74,7 +74,6 @@ public partial class NguoiTimViec_DangKyTimViec : System.Web.UI.Page
                 {
                     Response.Write("<script> alert('Đăng ký không thành công.')</script>");
                 }
-                //ungvienbll.LuuUngVien(txtHoTen.Text, mahoaMK, txtDiaChiUV.Text, thanhpho, ngaysinh, gioitinh, txtEmailUV.Text, txtSDTUV.Text);
                 ClearTextBox();
             }
         }

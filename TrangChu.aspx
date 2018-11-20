@@ -16,7 +16,7 @@
         <h3>Các việc làm mới nhất</h3>
     </div>
     <asp:GridView ID="grvTrangChu_DSViecLam" runat="server" Width="100%" AutoGenerateColumns="False" GridLines="Horizontal" AllowPaging="True" PageSize="15"
-        ><%--OnPageIndexChanging="grvTrangChu_DSViecLam_PageIndexChanging" OnRowCommand="grvTrangChu_DSViecLam_RowCommand"--%>
+    ><%--OnPageIndexChanging="grvTrangChu_DSViecLam_PageIndexChanging" OnRowCommand="grvTrangChu_DSViecLam_RowCommand"--%>
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="TieuDeViecLam" HeaderText="Tiêu đề" />

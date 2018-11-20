@@ -58,7 +58,8 @@
                     <%--<a href="#"></a> |--%>
                     <a href="#">Tin tức</a> |
                     <a href="#">Hỏi đáp</a> |
-                    <a href="../LienHe.aspx">Liên hệ</a>
+                    <a href="#">Liên hệ</a>
+                    <%--<a href="../LienHe.aspx">Liên hệ</a>--%>
                 </div>
                 <!-- Kết thúc link top -->
                 <!-- Login, Register -->
@@ -114,10 +115,10 @@
         <div class="menu">
             <div style="width: 1000px; height: auto; margin: auto">
                 <div class="div-menu"><a href="../TrangChu.aspx">Trang chủ</a></div>
-                <div class="div-menu"><a href="../GioiThieu.aspx">Giới thiệu</a></div>
-                <div class="div-menu"><a href="../ViecLamMienBac.aspx">Việc làm miền Bắc</a></div>
-                <div class="div-menu"><a href="../ViecLamMienTrung.aspx">Việc làm miền Trung</a></div>
-                <div class="div-menu"><a href="../ViecLamMienNam.aspx">Việc làm miền Nam</a></div>
+                <div class="div-menu"><a href="#">Giới thiệu</a></div>
+                <div class="div-menu"><a href="#">Việc làm miền Bắc</a></div>
+                <div class="div-menu"><a href="#">Việc làm miền Trung</a></div>
+                <div class="div-menu"><a href="#">Việc làm miền Nam</a></div>
             </div>
         </div>
         <!--Kết thúc menu-->
