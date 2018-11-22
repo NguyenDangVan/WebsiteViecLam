@@ -36,7 +36,7 @@ public partial class NguoiTimViec_DangKyTimViec : System.Web.UI.Page
     }
     protected void btnDangKyUngVien_Click(object sender, EventArgs e)
     {
-        UngVien uv = new UngVien();
+        UngVienDTO uv = new UngVienDTO();
         string mahoaMK = encrypt.GetMD5(txtMatKhauUV.Text);
         DateTime ngaysinh = Convert.ToDateTime(txtNgaySinh.Text.ToString());
         String.Format("{0:d}", ngaysinh);

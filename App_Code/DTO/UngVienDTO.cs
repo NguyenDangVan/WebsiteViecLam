@@ -6,9 +6,9 @@ using System.Web;
 /// <summary>
 /// Summary description for UngVien
 /// </summary>
-public class UngVien
+public class UngVienDTO
 {
-	public UngVien()
+    public UngVienDTO()
 	{
 		//
 		// TODO: Add constructor logic here

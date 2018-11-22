@@ -9,6 +9,7 @@
     </div>
     <div style="width: 100%; height: auto; float: left; text-align: right">
         <%--<a href="DanhSachNghe.aspx">Xem tất cả</a><br />--%>
+        <a href="#">Xem tất cả</a><br />
     </div>
     <br />
     <hr style="width: 600px; margin: auto;" />

@@ -90,12 +90,12 @@
                     <td class="a">Mức lương:</td>
                     <td>
                         <asp:DropDownList ID="ddlUV_MucLuong" runat="server" Height="30px" Width="225px">
-                            <asp:ListItem>1 - 3 triệu</asp:ListItem>
-                            <asp:ListItem>3 - 5 triệu</asp:ListItem>
-                            <asp:ListItem>5 - 8 triệu</asp:ListItem>
-                            <asp:ListItem>8 - 10 triệu</asp:ListItem>
-                            <asp:ListItem>Trên 10 triệu</asp:ListItem>
-                            <asp:ListItem>Thỏa thuận</asp:ListItem>
+                            <asp:ListItem>1 - 3 trieu</asp:ListItem>
+                            <asp:ListItem>3 - 5 trieu</asp:ListItem>
+                            <asp:ListItem>5 - 8 trieu</asp:ListItem>
+                            <asp:ListItem>8 - 10 trieu</asp:ListItem>
+                            <asp:ListItem>Trên 10 trieu</asp:ListItem>
+                            <asp:ListItem>Thoa thoan</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -107,7 +107,7 @@
                 </tr>
                 <tr>
                     <td style="text-align: right" colspan="2">
-                        <asp:Button ID="btnUV_Luu" runat="server" Text="Lưu" Height="35px" Width="80px" OnClick="btnUV_Luu_Click" />&nbsp;&nbsp;
+                    <asp:Button ID="btnUV_Luu" runat="server" Text="Lưu" Height="35px" Width="80px" OnClick="btnUV_Luu_Click" />&nbsp;&nbsp;
                     <asp:Button ID="btnUV_CapNhat" runat="server" Text="Cập nhật" Height="35px" Width="80px" OnClick="btnUV_CapNhat_Click" />&nbsp;&nbsp;
                     <asp:Button ID="btnUV_Xoa" runat="server" Text="Xóa CV" Height="35px" Width="80px" OnClick="btnUV_Xoa_Click" />&nbsp;
                     </td>

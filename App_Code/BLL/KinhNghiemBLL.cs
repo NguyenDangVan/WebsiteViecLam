@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
+
 /// <summary>
-/// Summary description for NganhNghe
+/// Summary description for KinhNghiemBLL
 /// </summary>
-public class NganhNghe
+public class KinhNghiemBLL
 {
     Data data = new Data();
-    public DataTable DsNganhNghe()
+    public DataTable DsKinhNghiem()
     {
-        string rowquery = "SELECT * FROM NganhNghe";
+        string rowquery = "SELECT * FROM KinhNghiem";
         DataTable dt = new DataTable();
         dt = data.GetTable(rowquery);
         return dt;
     }
-	public NganhNghe()
+	public KinhNghiemBLL()
 	{
 		//
 		// TODO: Add constructor logic here

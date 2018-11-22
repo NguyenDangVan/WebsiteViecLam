@@ -20,10 +20,15 @@ public partial class NguoiTimViec_DangNhapNguoiTimViec : System.Web.UI.Page
     protected void btnDNNguoiTimViec_Click(object sender, EventArgs e)
     {
         string matkhau = encrypt.GetMD5(txtMKNguoiTimViec.Text);
-        bool kq1 = ungvienbll.TimUngVien(txtMKNguoiTimViec.Text.Trim().ToString(), matkhau);
+        bool kq1 = ungvienbll.TimUngVien(txtEmail_NguoiTimViec.Text.Trim().ToString());
+        //ungviendto = ungvienbll.
         if (kq1 != false)
         {
-            //Session.SetCurrent_NguoiTimViec(kq, kq);
+            UngVienDTO current_uv = new UngVienDTO();
+            current_uv = ungvienbll.Get_UngVien(txtEmail_NguoiTimViec.Text.Trim().ToString());
+            Session["UngVien"] = current_uv;
+            Session["TenUV"] = current_uv.HoTen;
+            Session["IDUngVien"] = current_uv.ID_UngVien;
             string returnUrl = Request.QueryString["returnUrl"];
             if (!string.IsNullOrEmpty(returnUrl))
                 Response.Redirect(returnUrl);
