@@ -100,7 +100,7 @@
                 <div style="width: 400px; height: auto; margin: auto; float: right">
                     <div id="search">
                         <asp:TextBox ID="txtSearch" runat="server" Height="25px" Width="272px"></asp:TextBox>&nbsp
-                        <%--<asp:Button ID="btnSearch" runat="server" Height="30px" Text="Tìm kiếm" Width="80px" OnClick="btnSearch_Click" /><br />--%>
+                        <asp:Button ID="btnSearch" runat="server" Height="30px" Text="Tìm kiếm" Width="80px" OnClick="btnSearch_Click" /><br />
                         <div style="width: auto; height: auto; margin-top: 7px;">
                             <asp:DropDownList ID="ddlNganhNghe" runat="server" Height="25px">
                             </asp:DropDownList>&nbsp&nbsp
@@ -120,8 +120,8 @@
                 <div class="div-menu"><a href="../TrangChu.aspx">Trang chủ</a></div>
                 <div class="div-menu"><a href="../GioiThieu.aspx">Giới thiệu</a></div>
                 <div class="div-menu"><a href="../ViecLamMienBac.aspx">Việc làm miền Bắc</a></div>
-                <div class="div-menu"><a href="#">Việc làm miền Trung</a></div>
-                <div class="div-menu"><a href="#">Việc làm miền Nam</a></div>
+                <div class="div-menu"><a href="../ViecLamMienTrung.aspx">Việc làm miền Trung</a></div>
+                <div class="div-menu"><a href="../ViecLamMienNam.aspx">Việc làm miền Nam</a></div>
             </div>
         </div>
         <!--Kết thúc menu-->
@@ -163,7 +163,7 @@
                 <br />
                 <asp:DropDownList ID="ddlSearchKinhNghiem" runat="server" Height="30px" Width="250px"></asp:DropDownList><br />
                 <br />
-                <%--<asp:Button ID="btnTimKiemNhanh" runat="server" Text="Tìm kiếm nhanh" Height="30px" OnClick="btnTimKiemNhanh_Click" /><br />--%>
+                <asp:Button ID="btnTimKiemNhanh" runat="server" Text="Tìm kiếm nhanh" Height="30px" OnClick="btnTimKiemNhanh_Click" /><br />
                 <div>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
                     </asp:ContentPlaceHolder>

@@ -17,7 +17,6 @@ public partial class ViecLamMienBac : System.Web.UI.Page
     }
     private void LoadViecLamMB()
     {
-        vl.ViecLamMB();
         grvVLMienBac_DSViecLam.DataSource = vl.ViecLamMB();
         grvVLMienBac_DSViecLam.DataBind();
     }

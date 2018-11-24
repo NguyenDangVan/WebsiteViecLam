@@ -19,4 +19,23 @@ public partial class TrangChu : System.Web.UI.Page
         grvTrangChu_DSViecLam.DataSource = vieclam.ViecLamHot();
         grvTrangChu_DSViecLam.DataBind();
     }
+    protected void grvTrangChu_DSViecLam_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        grvTrangChu_DSViecLam.PageIndex = e.NewPageIndex;
+        grvTrangChu_DSViecLam.DataBind();
+        LoadViecLam();
+    }
+
+    protected void grvTrangChu_DSViecLam_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        try
+        {
+            if (e.CommandName == "lbtChiTietTragChu_DSViecLam")
+            {
+                Response.Redirect("ChiTietViecLam.aspx?IDViecLam=" + e.CommandArgument.ToString());
+            }
+        }
+        catch (Exception)
+        { }
+    }
 }
