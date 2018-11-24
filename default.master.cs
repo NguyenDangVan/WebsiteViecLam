@@ -128,7 +128,7 @@ public partial class _default : System.Web.UI.MasterPage
         {
             int idnghe = Convert.ToInt32(ddlNganhNghe.SelectedValue.ToString());
             int idtp = Convert.ToInt32(ddlThanhPho.SelectedValue.ToString());
-            Response.Redirect("~/TimKiem.aspx?IDNghe=" + idnghe + "&IdTP=" + idtp);
+            Response.Redirect("~/TimKiem.aspx?IDNghe=" + idnghe + "&IdTP=" + idtp + "&Search=" + txtSearch.Text);
         }
         catch (Exception)
         { }

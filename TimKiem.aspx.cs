@@ -38,17 +38,41 @@ public partial class TimKiem : System.Web.UI.Page
     }
     private void TimKiemDSViecLam()
     {
+        
         int nghe = Convert.ToInt32(Request.QueryString["IDNghe"]);
         int thanhpho = Convert.ToInt32(Request.QueryString["IdTP"]);
-        if (nghe != 0 && thanhpho != 0)
+        string search = Request.QueryString["Search"];
+        if(search == null)
         {
-            grvTimKiem_DSViecLam.DataSource = vl.TimKiem(1, nghe, thanhpho);
-            grvTimKiem_DSViecLam.DataBind();
+            if (nghe != 0 && thanhpho != 0)
+            {
+                try
+                {
+                    grvTimKiem_DSViecLam.DataSource = vl.TimKiem(1, nghe, thanhpho);
+                    grvTimKiem_DSViecLam.DataBind();
+                    vl.TimKiem(1, nghe, thanhpho).Rows[0][0].ToString();
+                }
+
+                catch
+                {
+                    lblTimKiem_ThongBao.Text = "Kết quả bạn tìm kiếm không tồn tại";
+                    lblTimKiem_ThongBao.Visible = true;
+                }
+            }
         }
-        if (grvTimKiem_DSViecLam.DataSource == null)
+        else
         {
-            lblTimKiem_ThongBao.Text = "Kết quả bạn tìm kiếm không tồn tại";
-            lblTimKiem_ThongBao.Visible = true;
+            try
+            {
+                grvTimKiem_DSViecLam.DataSource = vl.TimKiem_Text(1, search);
+                grvTimKiem_DSViecLam.DataBind();
+                vl.TimKiem_Text(1, search).Rows[0][0].ToString(); ;
+            }
+            catch
+            {
+                lblTimKiem_ThongBao.Text = "Kết quả bạn tìm kiếm không tồn tại";
+                lblTimKiem_ThongBao.Visible = true;
+            }
         }
     }
 }

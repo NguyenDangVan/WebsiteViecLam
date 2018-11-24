@@ -98,7 +98,7 @@ public partial class NguoiTimViec_NguoiTimViec : System.Web.UI.Page
             CurrentID = (int)Session["IDUngVien"];
             CV_UngVienDTO cv = new CV_UngVienDTO();
             cv = cvungvienbll.Get_CVUngVien(CurrentID);
-            if (cv.ID_UngVien != null)
+            if (cv != null)
             {
                 if (cv.TrangThai == 1)
                 {

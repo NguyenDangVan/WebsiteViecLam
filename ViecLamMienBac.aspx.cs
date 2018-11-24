@@ -35,7 +35,7 @@ public partial class ViecLamMienBac : System.Web.UI.Page
                 Response.Redirect("ChiTietViecLam.aspx?IDViecLam=" + e.CommandArgument.ToString());
             }
         }
-        catch (Exception ex)
+        catch (Exception)
         { }
     }
 }

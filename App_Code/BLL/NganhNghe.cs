@@ -9,9 +9,16 @@ using System.Data;
 public class NganhNghe
 {
     Data data = new Data();
+    public DataTable DsNganhNgheHot()
+    {
+        string rowquery = "SELECT top 5 * FROM NganhNghe order by ID_NganhNghe desc";
+        DataTable dt = new DataTable();
+        dt = data.GetTable(rowquery);
+        return dt;
+    }
     public DataTable DsNganhNghe()
     {
-        string rowquery = "SELECT * FROM NganhNghe";
+        string rowquery = "SELECT top 10 * FROM NganhNghe order by ID_NganhNghe desc";
         DataTable dt = new DataTable();
         dt = data.GetTable(rowquery);
         return dt;

@@ -112,6 +112,16 @@ public class ViecLam
         dt = data.GetTable(rowquery);
         return dt;
     }
+    public DataTable TimKiem_Text(int trangthai, string text)
+    {
+        string rowquery = " SELECT ViecLam.ID_ViecLam, ViecLam.TieuDeViecLam, ThanhPho.TenThanhPho, ViecLam.MucLuong, ViecLam.NgayHetHan"
+                        + " FROM ViecLam INNER JOIN CongTy ON ViecLam.ID_CongTy = CongTy.ID_CongTy "
+                        + " INNER JOIN ThanhPho ON CongTy.ID_ThanhPho = ThanhPho.ID_ThanhPho "
+                        + " WHERE TrangThai = '" + trangthai + "' and (ViecLam.TieuDeViecLam LIKE N'%" + text + "%' or ThanhPho.TenThanhPho LIKE N'%" + text + "%')";
+        DataTable dt = new DataTable();
+        dt = data.GetTable(rowquery);
+        return dt;
+    }
 	public ViecLam()
 	{
 		

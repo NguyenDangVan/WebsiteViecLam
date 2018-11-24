@@ -12,6 +12,13 @@ using System.Data;
 public class CongTyBLL
 {
     Data data = new Data();
+    public DataTable DsCongTy()
+    {
+        string rowquery = "SELECT top 5 * FROM CongTy order by ID_CongTy desc";
+        DataTable dt = new DataTable();
+        dt = data.GetTable(rowquery);
+        return dt;
+    }
     public void LuuCongTy(CongTy ct)
     {
         string sql = "INSERT INTO CongTy(TenCongTy, TenDangNhap, MatKhau, DiaChi, QuyMo, SDT, Mota, NguoiDaiDien, Email, ID_ThanhPho) "
