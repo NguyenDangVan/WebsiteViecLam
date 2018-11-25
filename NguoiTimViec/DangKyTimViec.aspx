@@ -51,6 +51,7 @@
             <td class="a">Số điện thoại:</td>
             <td><asp:TextBox ID="txtSDTUV" runat="server" Height="30px" Width="220px"></asp:TextBox>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtSDTUV" ErrorMessage="Sai định dạng số điện thoại" ForeColor="Red" ValidationExpression="0\d{9,10}"></asp:RegularExpressionValidator>
+                <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtSDTUV" ErrorMessage="Chưa nhập sđt" ForeColor="Red"></asp:RequiredFieldValidator>--%>
             </td>
         </tr>
         <tr>

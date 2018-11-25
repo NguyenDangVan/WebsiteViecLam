@@ -8,12 +8,12 @@ using System.Data;
 
 public class Data
 {
-    static String Khoa = @"Data Source=SZWGODPRRCULCER\SQLEXPRESS;Initial Catalog=WebsiteViecLam;Integrated Security=True";
+    static String Con = @"Data Source=SZWGODPRRCULCER\SQLEXPRESS;Initial Catalog=WebsiteViecLam;Integrated Security=True";
 
     public DataTable GetTable(string r)
     {
         DataTable dt = new DataTable();
-        SqlConnection KetNoi = new SqlConnection(Khoa);
+        SqlConnection KetNoi = new SqlConnection(Con);
         KetNoi.Open();
         SqlDataAdapter ad = new SqlDataAdapter(r, KetNoi);
         dt.Clear();
@@ -21,10 +21,9 @@ public class Data
         KetNoi.Close();
         return dt;
     }
-
     public void NowR(string r)
     {
-        SqlConnection KetNoi = new SqlConnection(Khoa);
+        SqlConnection KetNoi = new SqlConnection(Con);
         KetNoi.Open();
         SqlCommand cmd = new SqlCommand(r, KetNoi);
         cmd.ExecuteNonQuery();

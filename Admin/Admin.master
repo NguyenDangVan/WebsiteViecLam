@@ -33,7 +33,7 @@
                             <td class="left">
                                 <asp:Label ID="lblChao" runat="server" Text=""></asp:Label>
                                 <asp:Label ID="lblUser" runat="server" Text=""></asp:Label>
-                            &nbsp;<asp:LinkButton ID="lbtThoat" runat="server" >Out<%--OnClick="lbtThoat_Click"--%></asp:LinkButton>
+                            &nbsp;<asp:LinkButton ID="lbtThoat" runat="server" OnClick="lbtThoat_Click" ></asp:LinkButton>
                             </td>
                             <td class="right">
                                 <a href="Admin.aspx">Trang chủ</a>
@@ -63,10 +63,10 @@
             </div>
             <div id="footer">
                 <div style="text-align: center; font-size: 14px; margin-bottom: 15px;">
-                    Đồ án chuyên ngành - Khoa Công Nghệ Thông Tin<br />
-                    Trường ĐH Công Nghiệp TP.Hồ Chí Minh<br />
-                    GVHD: Th.s Từ Thị Xuân Hiền<br />
-                    SVTH: Lê Văn Kiên - Nguyễn Đình Hoàng Giang - Lớp: DHTH6B 
+                    Bài Tập Lớn môn Lập trình web ASP<br />
+                    Trường ĐH Công Nghiệp Hà Nội<br />
+                    GVHD: Th.s Đặng Quỳnh Nga<br />
+                    NSVTH: Nhóm1 - Lớp: HTTT1-K10 
                 </div>
             </div>
         </div>

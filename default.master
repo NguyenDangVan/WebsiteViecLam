@@ -58,18 +58,22 @@
                     <%--<a href="#"></a> |--%>
                     <a href="#">Tin tức</a> |
                     <a href="#">Hỏi đáp</a> |
-                    <a href="../LienHe.aspx">Liên hệ</a>
+                    <a href="#">Liên hệ</a>
+                    <%--<a href="../LienHe.aspx">Liên hệ</a>--%>
                 </div>
                 <!-- Kết thúc link top -->
                 <!-- Login, Register -->
                 <div id="login-top">
                     <asp:Label ID="lblDefault_User" runat="server" Text=""></asp:Label>
-                    <%--<asp:LinkButton ID="lbtDefault_User" runat="server" OnClick="lbtDefault_User_Click"></asp:LinkButton>&nbsp&nbsp                   
-                    <asp:LinkButton ID="lbtDefault_ThoatUser" runat="server" OnClick="lbtDefault_ThoatUser_Click">Thoát</asp:LinkButton>&nbsp&nbsp--%>
-                    <div id="IDDangNhap_DangKy" runat="server" style="width:auto; float:right">
-                        <a href="DangNhap.aspx">Đăng nhập</a>&nbsp&nbsp
-                        <a href="DangKy.aspx">Đăng ký</a>
-                    </div>
+                    <% if(Session["UngVien"] != null || Session["NhaTuyenDung"] != null) { %>
+                    <asp:LinkButton ID="lbtDefault_User" runat="server" OnClick="lbtDefault_User_Click" ></asp:LinkButton>&nbsp&nbsp                   
+                    <asp:LinkButton ID="lbtDefault_ThoatUser" runat="server" OnClick="lbtDefault_ThoatUser_Click" >Thoát</asp:LinkButton>&nbsp&nbsp
+                    <% } else { %>
+                        <div id="IDDangNhap_DangKy" runat="server" style="width:auto; float:right">
+                            <a href="../DangNhap.aspx">Đăng nhập</a>&nbsp&nbsp
+                            <a href="../DangKy.aspx">Đăng ký</a>
+                        </div>
+                    <% } %>
                     <%--<a href="#"><img src="../Images/icon_login.jpg" /> </a> &nbsp&nbsp
                     <a href="#"><img src="../Images/icon_user.jpg" /> </a>--%>
                 </div>
@@ -96,7 +100,7 @@
                 <div style="width: 400px; height: auto; margin: auto; float: right">
                     <div id="search">
                         <asp:TextBox ID="txtSearch" runat="server" Height="25px" Width="272px"></asp:TextBox>&nbsp
-                        <%--<asp:Button ID="btnSearch" runat="server" Height="30px" Text="Tìm kiếm" Width="80px" OnClick="btnSearch_Click" /><br />--%>
+                        <asp:Button ID="btnSearch" runat="server" Height="30px" Text="Tìm kiếm" Width="80px" OnClick="btnSearch_Click" /><br />
                         <div style="width: auto; height: auto; margin-top: 7px;">
                             <asp:DropDownList ID="ddlNganhNghe" runat="server" Height="25px">
                             </asp:DropDownList>&nbsp&nbsp
@@ -159,7 +163,7 @@
                 <br />
                 <asp:DropDownList ID="ddlSearchKinhNghiem" runat="server" Height="30px" Width="250px"></asp:DropDownList><br />
                 <br />
-                <%--<asp:Button ID="btnTimKiemNhanh" runat="server" Text="Tìm kiếm nhanh" Height="30px" OnClick="btnTimKiemNhanh_Click" /><br />--%>
+                <asp:Button ID="btnTimKiemNhanh" runat="server" Text="Tìm kiếm nhanh" Height="30px" OnClick="btnTimKiemNhanh_Click" /><br />
                 <div>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
                     </asp:ContentPlaceHolder>
@@ -197,7 +201,7 @@
                     <div id="content-footer a">
                         <br />
                         <h3>Việc tốt nhất</h3>
-                        <p>Công Ty Cổ Phần Việc Tốt Nhất</p>
+                        <p>Công Ty Trách Nhiệm Hữu Hạn 4 Thành Viên.</p>
 
                     </div>
                 </div>

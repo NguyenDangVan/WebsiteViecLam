@@ -15,4 +15,8 @@ public partial class DangKy : System.Web.UI.Page
     {
         Response.Redirect("NguoiTimViec/DangKyTimViec.aspx");
     }
+    protected void btnTuyenDung_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("NhaTuyenDung/DangKyCongTy.aspx");
+    }
 }

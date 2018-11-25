@@ -8,7 +8,7 @@
         </div>
         <div id="login-tuyendung">
             <div style="text-align:center; margin-top:10px"><img src="Images/tuyen-dung.png" style="height:120px" /></div><br />
-            <div style="text-align:center"><asp:Button ID="btnTuyenDung" runat="server" Text="Đăng ký Nhà Tuyển Dụng" Height="35px" Width="230px"  /><%--OnClick="btnTuyenDung_Click"--%></div>
+            <div style="text-align:center"><asp:Button ID="btnTuyenDung" runat="server" Text="Đăng ký Nhà Tuyển Dụng" Height="35px" Width="230px" OnClick="btnTuyenDung_Click"  /><%--OnClick="btnTuyenDung_Click"--%></div>
         </div>
     </div>
 </asp:Content>
