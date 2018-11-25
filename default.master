@@ -65,13 +65,13 @@
                 <!-- Login, Register -->
                 <div id="login-top">
                     <asp:Label ID="lblDefault_User" runat="server" Text=""></asp:Label>
-                    <% if(Session["UngVien"] != null) { %>
-                    <asp:LinkButton ID="lbtDefault_User" runat="server" OnClick="lbtDefault_User_Click" ><%= Session["TenUV"] %></asp:LinkButton>&nbsp&nbsp                   
+                    <% if(Session["UngVien"] != null || Session["NhaTuyenDung"] != null) { %>
+                    <asp:LinkButton ID="lbtDefault_User" runat="server" OnClick="lbtDefault_User_Click" ></asp:LinkButton>&nbsp&nbsp                   
                     <asp:LinkButton ID="lbtDefault_ThoatUser" runat="server" OnClick="lbtDefault_ThoatUser_Click" >Thoát</asp:LinkButton>&nbsp&nbsp
                     <% } else { %>
                         <div id="IDDangNhap_DangKy" runat="server" style="width:auto; float:right">
                             <a href="../DangNhap.aspx">Đăng nhập</a>&nbsp&nbsp
-                            <a href="DangKy.aspx">Đăng ký</a>
+                            <a href="../DangKy.aspx">Đăng ký</a>
                         </div>
                     <% } %>
                     <%--<a href="#"><img src="../Images/icon_login.jpg" /> </a> &nbsp&nbsp

@@ -4,13 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using System.Web.SessionState;
 
 public partial class NguoiTimViec_DangNhapNguoiTimViec : System.Web.UI.Page
 {
     clsEncrypt encrypt = new clsEncrypt();
-    Data data1 = new Data();
     //TimViecDBDataContext data = new TimViecDBDataContext();
     UngVienBLL ungvienbll = new UngVienBLL();
     protected void Page_Load(object sender, EventArgs e)

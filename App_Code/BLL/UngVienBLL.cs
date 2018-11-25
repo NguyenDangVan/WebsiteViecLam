@@ -24,8 +24,6 @@ public class UngVienBLL
         try
         {
             string kq = "Select * From UngVien Where Email = '" + email + "'";
-            DataTable mytable = new DataTable();
-            //UngVienDTO uv = new UngVienDTO();
             uv.ID_UngVien = Convert.ToInt32(data.GetTable(kq).Rows[0][0]);
             uv.HoTen = data.GetTable(kq).Rows[0][1].ToString();
             uv.DiaChi = data.GetTable(kq).Rows[0][3].ToString();
@@ -56,16 +54,6 @@ public class UngVienBLL
         string kq = "SELECT * FROM UngVien";
         DataTable mytable = new DataTable();
         mytable = data.GetTable(kq);
-        //DataColumn col = mytable.Columns[6];
-        //int countRow = mytable.Rows.Count;
-        //for (int iRow = 0; iRow < countRow; iRow++)
-        //{
-        //    string cell = mytable.Rows[iRow][6].ToString();
-        //    if (cell == email)
-        //    { return false; }
-        //    else
-        //    {return true;}
-        //}
         foreach (DataRow row in mytable.Rows)
         {
             if (row["Email"].ToString() == email)

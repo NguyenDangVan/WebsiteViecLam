@@ -42,7 +42,7 @@ public partial class TimKiem : System.Web.UI.Page
         int nghe = Convert.ToInt32(Request.QueryString["IDNghe"]);
         int thanhpho = Convert.ToInt32(Request.QueryString["IdTP"]);
         string search = Request.QueryString["Search"];
-        if(search == null)
+        if(search == "")
         {
             if (nghe != 0 && thanhpho != 0)
             {

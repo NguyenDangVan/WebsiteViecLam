@@ -32,7 +32,6 @@ public partial class TrangChu : System.Web.UI.Page
     private void LoadNgheHot()
     {
         string str1 = "";
-        string str2 = "";
         DataTable dt = new DataTable();
         dt = nn.DsNganhNgheHot();
         str1 += "<ul>";

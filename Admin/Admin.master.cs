@@ -11,4 +11,8 @@ public partial class Admin_Admin : System.Web.UI.MasterPage
     {
 
     }
+    protected void lbtThoat_Click(object sender, EventArgs e)
+    {
+
+    }
 }

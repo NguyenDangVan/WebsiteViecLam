@@ -12,6 +12,44 @@ using System.Data;
 public class ViecLam
 {
     Data data = new Data();
+    public void LuuViecLam(string tieudevl, string mota, int nn, int vitri, string gioitinh, string yeucau, string timethuviec, int kinhnghiem, int trinhdo, string luong, string ngaydang, string ngayhethan, int trangthai, int id, int soluong, string hoso)
+    {
+        string sql = "INSERT INTO ViecLam(TieuDeViecLam, MoTa, ID_NganhNghe, ID_ViTri, GioiTinh, YeuCauKyNang, ThoiGianThuViec, ID_KinhNghiem, ID_TrinhDo, MucLuong, NgayDang, NgayHetHan, TrangThai, ID_CongTy, SoLuong, YeuCauHoSo) "
+            + "VALUES (N'" + tieudevl + "', N'" + mota + "', '" + nn + "', '" + vitri + "', N'" + gioitinh + "', N'" + yeucau + "', N'" + timethuviec + "', "
+            + "'" + kinhnghiem + "', '" + trinhdo + "', N'" + luong + "', N'" + ngaydang + "', N'" + ngayhethan + "', '" + trangthai + "', '" + id + "', '" + soluong + "', N'" + hoso + "')";
+        data.NowR(sql);
+    }
+    public void CapNhatViecLam(int idvl, string tieudevl, string mota, int nn, int vitri, string gioitinh, string yeucau, string timethuviec, int kinhnghiem, int trinhdo, string luong, string ngayhethan, int trangthai, int soluong, string hoso)
+    {
+        string sql = "Update ViecLam Set TieuDeViecLam = N'" + tieudevl + "', MoTa = N'" + mota + "', ID_NganhNghe = '" + nn + "', ID_ViTri = '" + vitri + "', "
+            + "GioiTinh = N'" + gioitinh + "', YeuCauKyNang = N'" + yeucau + "', ThoiGianThuViec = '" + timethuviec + "', ID_KinhNghiem = '" + kinhnghiem + "', "
+            + "ID_TrinhDo = '" + trinhdo + "', MucLuong = N'" + luong + "', NgayHetHan = N'" + ngayhethan + "', TrangThai = '" + trangthai + "', SoLuong = '" + soluong + "', YeuCauHoSo = N'" + hoso + "' "
+            + "Where ID_ViecLam = '"+ idvl +"'";
+        data.NowR(sql);
+    }
+    public void XoaViecLam(int idvieclam)
+    {
+        string sql = "DELETE FROM ViecLam WHERE ID_ViecLam = '"+ idvieclam +"'";
+        data.NowR(sql);
+    }
+    public DataTable DsViecLam(int idvieclam)
+    {
+        string sql = "SELECT * FROM ViecLam Where ID_ViecLam = '"+ idvieclam +"'";
+        DataTable dt = new DataTable();
+        dt = data.GetTable(sql);
+        return dt;
+    }
+    public DataTable DsViecLam_CT(int id_congty)
+    {
+        string rowquery = "Select ViecLam.ID_ViecLam, ViecLam.TieuDeViecLam, NganhNghe.TenNganhNghe, ThanhPho.TenThanhPho, ViecLam.NgayDang, ViecLam.NgayHetHan, ViecLam.TrangThai"
+                        + " from ViecLam inner join CongTy on ViecLam.ID_CongTy = CongTy.ID_CongTy"
+                        + " inner join ThanhPho on CongTy.ID_ThanhPho = ThanhPho.ID_ThanhPho"
+                        + " inner join Nganhnghe on ViecLam.ID_NganhNghe= NganhNghe.ID_NganhNghe"
+                        + " where ViecLam.ID_CongTy = '" + id_congty + "'";
+        DataTable dt = new DataTable();
+        dt = data.GetTable(rowquery);
+        return dt;
+    }
     public DataTable ViecLamHot()
     {
         string rowquery = "Select ViecLam.ID_ViecLam, ViecLam.TieuDeViecLam, ThanhPho.TenThanhPho, ViecLam.MucLuong, ViecLam.NgayHetHan"

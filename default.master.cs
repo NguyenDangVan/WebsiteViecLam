@@ -13,6 +13,7 @@ public partial class _default : System.Web.UI.MasterPage
     NganhNghe nn = new NganhNghe();
     ThanhPho tp = new ThanhPho();
     UngVienBLL uvbll = new UngVienBLL();
+    CongTyBLL ctbll = new CongTyBLL();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!Page.IsPostBack)
@@ -26,11 +27,22 @@ public partial class _default : System.Web.UI.MasterPage
             loadSearchThanhPho();
             // ứng viên
             UngVienDTO uv = new UngVienDTO();
-            if(Session["TenUV"] != null)
+            if(Session["UngVien"] != null)
             {
                 lblDefault_User.Text = "Xin chào: ";
+                lbtDefault_User.Text = (String)Session["TenUV"];
+                lblDefault_User.Visible = true;
             }
             // nhà tuyển dụng
+            if (Session["NhaTuyenDung"] != null)
+            {
+                lblDefault_User.Text = "Xin chào: ";
+                string tendangnhap = (string)Session["TenDangNhap"];
+                CongTy ct = new CongTy();
+                ct = ctbll.Get_CongTy(tendangnhap);
+                lbtDefault_User.Text = ct.TenCongTy;
+                lblDefault_User.Visible = true;
+            }
         }
     }
     protected void lbtDefault_User_Click(object sender, EventArgs e)
@@ -41,10 +53,10 @@ public partial class _default : System.Web.UI.MasterPage
             {
                 Response.Redirect("~/NguoiTimViec/NguoiTimViec.aspx");
             }
-            //if (Session.GetName_NhaTuyenDung() != null)
-            //{
-            //    Response.Redirect("~/NhaTuyenDung/NhaTuyenDung.aspx");
-            //}
+            if (Session["NhaTuyenDung"] != null)
+            {
+                Response.Redirect("~/NhaTuyenDung/NhaTuyenDung.aspx");
+            }
         }
         catch (Exception)
         { }
@@ -54,7 +66,8 @@ public partial class _default : System.Web.UI.MasterPage
         Session.Remove("UngVien");
         Session.Remove("IDUngVien");
         Session.Remove("TenUV");
-        Response.Redirect("../TrangChu.aspx");
+        Session.Abandon();
+        Response.Redirect("~/TrangChu.aspx");
     }
     protected void btnTimKiemNhanh_Click(object sender, EventArgs e)
     {
