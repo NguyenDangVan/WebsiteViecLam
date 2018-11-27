@@ -1,0 +1,215 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="default.master.cs" Inherits="_default" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Tìm việc online</title>
+    <link href="CSS/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <script src="CSS/jquery.min.js"></script>
+    <script src="Script/jquery-1.10.2.min.js"></script>
+    <script src="Script/jquery-1.7.1.js"></script>
+
+</head>
+
+<body>
+    <style type='text/css'>
+        #bttop {
+            border: 1px solid #4adcff;
+            background: #24bde2;
+            text-align: center;
+            padding: 5px;
+            position: fixed;
+            bottom: 35px;
+            right: 10px;
+            cursor: pointer;
+            display: none;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 900;
+        }
+
+            #bttop:hover {
+                border: 1px solid #ffa789;
+                background: #ff6734;
+            }
+    </style>
+    <div id='bttop'>BACK TO TOP</div>
+
+    <script src="Script/jquery.min.js" type="text/javascript"></script>
+    <script type='text/javascript'>
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() != 0)
+                { $('#bttop').fadeIn(); }
+                else { $('#bttop').fadeOut(); }
+            }); $('#bttop').click(function () { $('body,html').animate({ scrollTop: 0 }, 800); });
+        });</script>
+
+
+
+    <form id="form1" runat="server">
+
+        <!-- Top -->
+        <div id="top">
+            <div id="content-top">
+                <!-- link top -->
+                <div style="width: 500px; height: 30px; padding-top: 5px; padding-left: 15px; font-size: 13px; font-weight: 700; float: left;">
+                    <%--<a href="#"></a> |--%>
+                    <a href="#">Tin tức</a> |
+                    <a href="#">Hỏi đáp</a> |
+                    <a href="#">Liên hệ</a>
+                    <%--<a href="../LienHe.aspx">Liên hệ</a>--%>
+                </div>
+                <!-- Kết thúc link top -->
+                <!-- Login, Register -->
+                <div id="login-top">
+                    <asp:Label ID="lblDefault_User" runat="server" Text=""></asp:Label>
+                    <% if(Session["UngVien"] != null || Session["NhaTuyenDung"] != null) { %>
+                    <asp:LinkButton ID="lbtDefault_User" runat="server" OnClick="lbtDefault_User_Click" ></asp:LinkButton>&nbsp&nbsp                   
+                    <asp:LinkButton ID="lbtDefault_ThoatUser" runat="server" OnClick="lbtDefault_ThoatUser_Click" >Thoát</asp:LinkButton>&nbsp&nbsp
+                    <% } else { %>
+                        <div id="IDDangNhap_DangKy" runat="server" style="width:auto; float:right">
+                            <a href="../DangNhap.aspx">Đăng nhập</a>&nbsp&nbsp
+                            <a href="../DangKy.aspx">Đăng ký</a>
+                        </div>
+                    <% } %>
+                    <%--<a href="#"><img src="../Images/icon_login.jpg" /> </a> &nbsp&nbsp
+                    <a href="#"><img src="../Images/icon_user.jpg" /> </a>--%>
+                </div>
+                <!-- Kết thúc -->
+            </div>
+        </div>
+        <!--Kết thúc top-->
+        <!--------------------->
+
+        <!-- Header -->
+        <div id="header">
+            <div style="width: 1000px; height: auto; margin: auto">
+                <div style="float: left; margin-left: 15px; padding-top: 10px;">
+                    <img src="../Images/jobss.jpg" width="90" />
+                </div>
+                <div style="float: left; margin-left: 40px; font-style: italic;">
+                    <ul type="square">
+                        <li>Nhanh chóng</li>
+                        <li>Dễ dàng</li>
+                        <li>Thuận tiện</li>
+                        <li>Thân thiện với người sử dụng</li>
+                    </ul>
+                </div>
+                <div style="width: 400px; height: auto; margin: auto; float: right">
+                    <div id="search">
+                        <asp:TextBox ID="txtSearch" runat="server" Height="25px" Width="272px"></asp:TextBox>&nbsp
+                        <asp:Button ID="btnSearch" runat="server" Height="30px" Text="Tìm kiếm" Width="80px" OnClick="btnSearch_Click" /><br />
+                        <div style="width: auto; height: auto; margin-top: 7px;">
+                            <asp:DropDownList ID="ddlNganhNghe" runat="server" Height="25px">
+                            </asp:DropDownList>&nbsp&nbsp
+                            <asp:DropDownList ID="ddlThanhPho" runat="server" Height="25px">
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Kết thúc header-->
+        <!--------------------->
+
+        <!-- menu -->
+        <div class="menu">
+            <div style="width: 1000px; height: auto; margin: auto">
+                <div class="div-menu"><a href="../TrangChu.aspx">Trang chủ</a></div>
+                <div class="div-menu"><a href="../GioiThieu.aspx">Giới thiệu</a></div>
+                <div class="div-menu"><a href="../ViecLamMienBac.aspx">Việc làm miền Bắc</a></div>
+                <div class="div-menu"><a href="../ViecLamMienTrung.aspx">Việc làm miền Trung</a></div>
+                <div class="div-menu"><a href="../ViecLamMienNam.aspx">Việc làm miền Nam</a></div>
+            </div>
+        </div>
+        <!--Kết thúc menu-->
+        <!--------------------->
+
+        <!-- Wrapper -->
+        <div id="wrapper">
+            <div class="menu-header">
+                <asp:ContentPlaceHolder ID="MenuDangNhap" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!-- Nội dung chính -->
+            <div id="content">
+                <%--<div id="customSearch">
+                    Ngành nghề:
+                    
+                    Thành phố:
+                    
+                </div>--%>
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <!-- Right -->
+            <div class="right">
+                <!-- Tìm kiếm nhanh -->
+                <div class="title-right">
+                    Tìm kiếm việc làm
+                </div>
+                <br />
+                <asp:DropDownList ID="ddlSearchNghe" runat="server" Height="30px" Width="250px"></asp:DropDownList><br />
+                <br />
+                <asp:DropDownList ID="ddlSearchThanhPho" runat="server" Height="30px" Width="250px"></asp:DropDownList><br />
+                <br />
+                <asp:DropDownList ID="ddlSearchTrinhDo" runat="server" Height="30px" Width="250px"></asp:DropDownList><br />
+                <br />
+                <asp:DropDownList ID="ddlSearchViTri" runat="server" Height="30px" Width="250px"></asp:DropDownList><br />
+                <br />
+                <asp:DropDownList ID="ddlSearchKinhNghiem" runat="server" Height="30px" Width="250px"></asp:DropDownList><br />
+                <br />
+                <asp:Button ID="btnTimKiemNhanh" runat="server" Text="Tìm kiếm nhanh" Height="30px" OnClick="btnTimKiemNhanh_Click" /><br />
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+
+            </div>
+            <div class="right">
+                <div class="title-right">
+                    Việc làm mới nhất
+                </div>
+                <%--<uc1:ViecLamMoi runat="server" ID="ViecLamMoi" />--%>
+            </div>
+            <!-- Kết thúc -->
+            <!-- Footer -->
+            <div id="footer">
+                <%--<div class="menu">
+                <div style="width: 1000px; height: auto; margin: auto">
+                    <div class="div-menu"><a href="#">Trang chủ</a></div>
+                    <div class="div-menu"><a href="#">Tin việc làm</a></div>
+                    <div class="div-menu"><a href="#">Việc làm miền Bắc</a></div>
+                    <div class="div-menu"><a href="#">Việc làm miền Trung</a></div>
+                    <div class="div-menu"><a href="#">Việc làm miền Nam</a></div>
+                </div>
+            </div>--%>
+                <div style="width: 1000px; height: auto; margin: auto;">
+                    <div id="content-footer">
+                        
+                        <h3>Đại Học Công Nghiệp Hà Nội</h3>
+                        <b>Địa chỉ:</b> số nhà 99 đường Xuân Phương, Nhổn <br />
+                        <b>Thiết kế:</b> Nhóm 1 <br />
+                        <b>Điện thoại:</b> 0358309653<br />
+                        <b>Email: </b>dinvvan@gmail.com<br />
+
+                    </div>
+                    <div id="content-footer a">
+                        <br />
+                        <h3>Việc tốt nhất</h3>
+                        <p>Công Ty Trách Nhiệm Hữu Hạn 4 Thành Viên.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Kết thúc wrapper-->
+        <!--------------------->
+
+    </form>
+</body>
+</html>
